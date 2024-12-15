@@ -1,0 +1,145 @@
+* {
+    /* Include padding and border in size calculation. */
+    box-sizing: border-box;
+    /* Position base on inmmediate parent and allow adjusting top/right/bottom/left */
+    position: relative;
+    /* Prevent grid and flex items from spilling out of their container. */
+    min-width: 0;
+  }
+
+:root{
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+    --white: hsl(0, 0%, 100%);
+    --green: hsl(75, 94%, 57%);
+    /* Tipografía */
+    --primary-font: Inter, Verdana, sans-serif;
+}
+
+body {
+    /* Ensure that the body fills the entire viewport. */
+    min-height: 100dvh;
+    color: var(--white);
+	/* Configuramos el color de fondo con la custom property */
+	background: var(--grey-900);
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    /* Balance headings across multiple lines into an even block. */
+    text-wrap: balance;
+  }
+
+  p {
+    /* Prevent text orphans (single words on last line). */
+    text-wrap: balance;
+  }
+
+
+  /* Evitamos problemas con las imagenes */
+  img {
+    display: block;
+    border-radius: 100%;
+  }
+
+  /* Reseteamos los enlaces para funcionar como cajas... */
+  a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* ... excepto los que se encuentran en párrafos */
+  p a {
+    display: inline;
+  }
+
+  .card {
+    width: 384px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    border-radius: 12px;
+    background: var(--grey-800);
+  }
+
+  .name-user {
+    font-size: 1.5em;
+    margin-bottom: 0;
+  }
+
+  .ubication {
+    margin-top: 0.5rem;
+    font-size: 0.875em;
+    color: var(--green);
+  }
+
+  .decription {
+    margin-bottom: 1.75rem;
+    font-size: 0.875em;
+    opacity: 70%;
+  }
+
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .button {
+    width: 100%;
+    border-radius: 0.5rem;
+    padding-block: 0.875rem;
+    text-align: center;
+    background: var(--grey-700);
+    font-size: 0.875em;
+  }
+
+  .button:hover{
+    background-color: var(--green);
+    color: var(--grey-900);
+  }
+
+  .inter-bold {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .inter-semibold {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .inter-regular {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @media (max-width: 400px){
+    .card {
+        width: 327px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        border-radius: 8px;
+        background: var(--grey-800);
+      }
+  }
